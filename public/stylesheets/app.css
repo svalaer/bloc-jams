@@ -50,3 +50,16 @@ body.landing {
     height: 90px;
     padding: 0 100px;
 }
+html {
+  height: 100%; }
+
+body {
+  font-family: 'Open Sans';
+  color: white;
+  min-height: 100%; }
+
+body.landing {
+  background: #5b5579; }
+
+
+/*# sourceMappingURL=app.css.map*/
