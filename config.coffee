@@ -38,7 +38,7 @@
             joinTo: 'javascripts/app.js'
     server:
         path: 'server.coffee'
-        port: 3000
+        port: 3001
         base: '/'
         app: 'express'
         debug: 'brunch:server'
