@@ -45,7 +45,6 @@ var updateCollectionView = function() {
 if (document.URL.match(/\/collection.html/)) {
     $(document).ready(function() {
         updateCollectionView();
-    }
     });
 }
 

@@ -43,7 +43,7 @@ var createSongRow = function(songNumber, songName, songLength) {
 
     var $row = $(template);
 
-    var onHover = function(event) {
+    var onHover = function (event) {
         var songNumberCell = $(this).find('.song-number');
         var songNumber = songNumberCell.data('song-number');
         if (songNumber !== currentlyPlayingSong) {
@@ -51,14 +51,17 @@ var createSongRow = function(songNumber, songName, songLength) {
         }
     };
 
-    var offHover = function(event) {
+    var offHover = function (event) {
         var songNumberCell = $(this).find('.song-number');
         var songNumber = songNumberCell.data('song-number');
         if (songNumber !== currentlyPlayingSong) {
             songNumberCell.html(songNumber);
         }
     };
+};
 
+var clickHandler = function(event) {
+        var songNumber = $(this).data('song-number');
 
     if (currentlyPlayingSong !== null) {
         // Revert to song number for currently playing song because user started playing new song.
@@ -76,7 +79,8 @@ var createSongRow = function(songNumber, songName, songLength) {
         $(this).html('<a class="album-song-button"><i class="fa fa-play"></i></a>');
         currentlyPlayingSong = null;
     }
-        $row.find('.song-number').click(clickHandler);
+
+       $row.find('.song-number').click(clickHandler);
     $row.hover(onHover, offHover);
     return $row;
 };
