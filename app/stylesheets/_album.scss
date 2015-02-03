@@ -49,20 +49,20 @@
   display: inline-block;
   width: 28px;
   height: 28px;
-}
 
-.album-song-button:hover {
-  cursor: pointer;
-  color: white;
-  background-color: #d2287b;
-}
+  :hover {
+    cursor: pointer;
+    color: white;
+    background-color: #d2287b;
+  }
 
-.album-song-button i {
-  line-height: 28px;
-}
+  i {
+    line-height: 28px;
+  }
 
-.album-song-button .fa-play {
-  padding-left: 5px;
+  .fa-play {
+    padding-left: 5px;
+  }
 }
 
 .album-song-listing td {
