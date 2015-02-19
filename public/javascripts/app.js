@@ -292,7 +292,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         url: '/collection',
         controller: 'Collection.controller',
         templateUrl: '/templates/collection.html'
-    })
+    });
     $stateProvider.state('album', {
         url: '/album',
         templateUrl: '/templates/album.html',
@@ -331,6 +331,7 @@ blocJams.controller('Collection.controller', ['$scope','SongPlayer', function($s
 }]);
 blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
     $scope.album = angular.copy(albumPicasso);
+    metric.registerAlbumClicks(albumPicasso);
     var hoveredSong = null;
     var playingSong = null;
 
@@ -380,7 +381,45 @@ blocJams.controller('PlayerBar.controller', ['$scope', 'SongPlayer', function($s
     });
 }]);
 
-blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
+blocJams.service('Metric', ['$rootScope', function($rootScope) {
+    $rootScope.songPlays = [];
+    $rootScope.albumClicks = [];
+    $rootScope.artistClicks = [];
+
+    return {
+        // Function that records a metric object by pushing it to our $rootScope array.
+        registerSongPlay: function(songObj) {
+            // Add time to event register.
+            songObj['playedAt'] = new Date();
+            $rootScope.songPlays.push(songObj);
+        },
+        //Function that records a metric object of albums clicked and pushed it to the $rootScope array
+        registerAlbumClicks: function(albumObj) {
+            // Add time to event register.
+            albumObj['playedAt'] = new Date();
+            $rootScope.albumClicks.push(albumObj);
+        },
+        //Function that records a metric object of artists clicked and pushed it to the $rootScope array
+        registerArtistsClicks: function(artistObj) {
+            // Add time to event register.
+            artistObj['playedAt'] = new Date();
+            $rootScope.artistClicks.push(artistObj);
+        },
+        listSongsPlayed: function() {
+            var songs = [];
+            angular.forEach($rootScope.songPlays, function(song) {
+                // Check to make sure the song isn't added twice.
+                if (songs.indexOf(song.name) != -1) {
+                    songs.push(song.name);
+                }
+            });
+            return songs;
+        }
+    };
+
+}]);
+
+blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,metric) {
     var currentSoundFile = null;
     var trackIndex = function(album, song) {
         return album.songs.indexOf(song);
@@ -452,6 +491,7 @@ blocJams.service('SongPlayer', ['$rootScope', function($rootScope) {
                 });
 
             this.play();
+            metric.registerSongPlay(song)
         }
     };
 }]);
