@@ -21,6 +21,22 @@ var albumPicasso = {
     ]
 };
 
+var albumMarconi = {
+    name: 'The Colors',
+    artist: 'Bang Bang',
+    label: 'Cubism',
+    year: '1881',
+    albumArtUrl: '/images/album-placeholder.png',
+
+    songs: [
+        { name: 'One', length: 163.38, audioUrl: '/music/placeholders/blue' },
+        { name: 'Two', length: 105.66 , audioUrl: '/music/placeholders/green' },
+        { name: 'Three', length: 270.14, audioUrl: '/music/placeholders/red' },
+        { name: 'Four', length: 154.81, audioUrl: '/music/placeholders/pink' },
+        { name: 'Five', length: 375.92, audioUrl: '/music/placeholders/magenta' }
+    ]
+};
+
 blocJams = angular.module('BlocJams', ['ui.router']);
 
 blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider, $locationProvider) {
@@ -41,7 +57,13 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         templateUrl: '/templates/album.html',
         controller: 'Album.controller'
     });
+    $stateProvider.state('dashboard', {
+        url: '/dashboard',
+        templateUrl: '/templates/dashboard.html',
+        controller: 'dashboard.controller'
+    });
 }]);
+
 
 // This is a cleaner way to call the controller than crowding it on the module definition.
 blocJams.controller('Landing.controller', ['$scope', function($scope) {
@@ -157,6 +179,29 @@ blocJams.service('Metric', ['$rootScope', function($rootScope) {
             return songs;
         }
     };
+
+}]);
+
+blocJams.controller("dashboard.controller", ["$scope","Metrics","$rootScope",function($scope,Metrics,$rootScope){
+    $scope.songPlays = $rootScope.songPlays;
+    $scope.albumClicks = $rootScope.albumClicks;
+    $scope.artistClicks = $rootScope.artistClicks;
+
+    $scope.state = "song";
+    $scope.buttonClick = function(button) {
+        $scope.state = button
+
+    };
+    $scope.state = "album";
+    $scope.buttonClick = function(button) {
+        $scope.state = button
+
+    };
+    $scope.state = "artist";
+    $scope.buttonClick = function(button) {
+        $scope.state = button
+
+    }
 
 }]);
 
