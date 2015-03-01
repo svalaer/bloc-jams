@@ -22,10 +22,10 @@ var albumPicasso = {
 };
 
 var albumMarconi = {
-    name: 'The Colors',
+    name: 'First Explosion',
     artist: 'Bang Bang',
-    label: 'Cubism',
-    year: '1881',
+    label: 'First Explosion',
+    year: '1929',
     albumArtUrl: '/images/album-placeholder.png',
 
     songs: [
@@ -53,7 +53,7 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         templateUrl: '/templates/collection.html'
     });
     $stateProvider.state('album', {
-        url: '/album',
+        url: '/album/:id',
         templateUrl: '/templates/album.html',
         controller: 'Album.controller'
     });
@@ -93,8 +93,11 @@ blocJams.controller('Collection.controller', ['$scope','SongPlayer', "Metric", f
         metric.registerAlbumClicks(album);
     }
 }]);
-blocJams.controller('Album.controller', ['$scope', 'SongPlayer', function($scope, SongPlayer) {
+blocJams.controller('Album.controller', ['$scope', 'SongPlayer', '$stateParams', 'Metric', function($scope, SongPlayer, $stateParams, Metric) {
+    $scope.albums = [];
     $scope.albums.push(albumPicasso, albumMarconi);
+    $scope.currentAlbum = $scope.albums[$stateParams.id];
+    Metric.registerAlbumClicks($scope.currentAlbum);
     var hoveredSong = null;
     var playingSong = null;
 
@@ -182,7 +185,7 @@ blocJams.service('Metric', ['$rootScope', function($rootScope) {
 
 }]);
 
-blocJams.controller("dashboard.controller", ["$scope","Metrics","$rootScope",function($scope,Metrics,$rootScope){
+blocJams.controller("dashboard.controller", ["$scope","Metric","$rootScope",function($scope,Metrics,$rootScope){
     $scope.songPlays = $rootScope.songPlays;
     $scope.albumClicks = $rootScope.albumClicks;
     $scope.artistClicks = $rootScope.artistClicks;
@@ -205,9 +208,9 @@ blocJams.controller("dashboard.controller", ["$scope","Metrics","$rootScope",fun
 
 }]);
 
-blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,metric) {
+blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metric) {
     var currentSoundFile = null;
-    var trackIndex = function(album, song) {
+    var trackIndex = function(currentAlbum, song) {
         return album.songs.indexOf(song);
     };
 
@@ -277,7 +280,7 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,metri
                 });
 
             this.play();
-            metric.registerSongPlay(song)
+            Metric.registerSongPlay(song)
         }
     };
 }]);
