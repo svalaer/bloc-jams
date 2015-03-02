@@ -1,0 +1,104 @@
+
+<body>
+
+
+<div class="container-fluid">
+
+    <div class="row row-offcanvas row-offcanvas-left">
+
+        <div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+
+            <ul class="nav nav-sidebar">
+                <li class="active"><a href="#">Overview</a></li>
+                <li><a href="#">Reports</a></li>
+                <li><a href="#">Analytics</a></li>
+                <li><a href="#">Export</a></li>
+            </ul>
+
+
+        </div><!--/span-->
+
+        <div ng-controller="dashboard.controller" class="col-sm-9 col-md-10 main">
+
+            <!--toggle sidebar button-->
+            <p class="visible-xs">
+                <button type="button" class="btn btn-primary btn-xs" data-toggle="offcanvas"><i class="glyphicon glyphicon-chevron-left"></i></button>
+            </p>
+
+            <h1 class="page-header">
+                Dashboard
+                <p class="lead">User Plays</p>
+            </h1>
+
+            <div class="row placeholders">
+                <div class="col-xs-6 col-sm-4 placeholder text-center">
+                    <a ng-click="buttonClick('songs')" href='#' class='button'>Songs Played</a>
+                </div>
+                <div class="col-xs-6 col-sm-4 placeholder text-center">
+                    <a ng-click="buttonClick('albums')" href='#' class='button'>Albums Played</a>
+                </div>
+                <div class="col-xs-6 col-sm-4 placeholder text-center">
+                    <a ng-click="buttonClick('artists')" href='#' class='button'>Artists Played</a>
+                </div>
+            </div>
+
+
+            <hr>
+
+            <h2 class="sub-header">Played Information</h2>
+            <div class="table-responsive">
+                <table ng-show="state=='songs'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="song in songPlays">
+                        <td> {{ song.songName }} </td>
+                        <td> {{song.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table ng-show="state=='albumClicks'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Album</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="song in songPlays">
+                        <td> {{ album.albumName }} </td>
+                        <td> {{ album.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table ng-show="state=='artistClicks'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Artist</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="song in songPlays">
+                        <td> {{ artist.artistName }} </td>
+                        <td> {{ artist.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </div><!--/row-->
+    </div>
+</div><!--/.container-->
+
+<footer>
+    <p class="pull-right">©Sullivan Valaer</p>
+</footer>
+
+<!-- script references -->
+
+</body>

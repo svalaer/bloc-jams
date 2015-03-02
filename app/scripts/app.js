@@ -158,6 +158,7 @@ blocJams.service('Metric', ['$rootScope', function($rootScope) {
             // Add time to event register.
             songObj['playedAt'] = new Date();
             $rootScope.songPlays.push(songObj);
+            console.log(songObj);
         },
         //Function that records a metric object of albums clicked and pushed it to the $rootScope array
         registerAlbumClicks: function(albumObj) {
@@ -223,6 +224,7 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metri
         play: function() {
             this.playing = true;
             currentSoundFile.play();
+            Metric.registerSongPlay(this.currentSong);
         },
         pause: function() {
             this.playing = false;
