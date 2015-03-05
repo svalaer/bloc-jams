@@ -46,51 +46,50 @@
             <hr>
 
             <h2 class="sub-header">Played Information</h2>
-            <!--<div class="table-responsive">-->
-                <!--<table ng-show="state=='songs'" class="table table-striped">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>Name</th>-->
-                        <!--<th>Played At</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<tr ng-repeat="song in songPlays">-->
-                        <!--<td> {{ song.songName }} </td>-->
-                        <!--<td> {{song.playedAt }} </td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-                <!--<table ng-show="state=='albumClicks'" class="table table-striped">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>Album</th>-->
-                        <!--<th>Played At</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<tr ng-repeat="song in songPlays">-->
-                        <!--<td> {{ album.albumName }} </td>-->
-                        <!--<td> {{ album.playedAt }} </td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-                <!--<table ng-show="state=='artistClicks'" class="table table-striped">-->
-                    <!--<thead>-->
-                    <!--<tr>-->
-                        <!--<th>Artist</th>-->
-                        <!--<th>Played At</th>-->
-                    <!--</tr>-->
-                    <!--</thead>-->
-                    <!--<tbody>-->
-                    <!--<tr ng-repeat="song in songPlays">-->
-                        <!--<td> {{ artist.artistName }} </td>-->
-                        <!--<td> {{ artist.playedAt }} </td>-->
-                    <!--</tr>-->
-                    <!--</tbody>-->
-                <!--</table>-->
-            <!--</div>-->
-
+            <div class="table-responsive">
+                <table ng-show ="state=='songs'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat ="song in songPlays track by $index">
+                        <td> {{ song.songName }} </td>
+                        <td> {{song.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table ng-show ="state=='albumClicks'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Album</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat ="song in songPlays">
+                        <td> {{ album.albumName }} </td>
+                        <td> {{ album.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+                <table ng-show ="state=='artistClicks'" class="table table-striped">
+                    <thead>
+                    <tr>
+                        <th>Artist</th>
+                        <th>Played At</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr ng-repeat="song in songPlays">
+                        <td> {{ artist.artistName }} </td>
+                        <td> {{ artist.playedAt }} </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
         </div><!--/row-->
     </div>
 </div><!--/.container-->
