@@ -282,7 +282,6 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metri
                 });
 
             this.play();
-            Metric.registerSongPlay(song)
         }
     };
 }]);
