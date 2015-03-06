@@ -354,7 +354,6 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', '$stateParams',
     $scope.albums = [];
     $scope.albums.push(albumPicasso, albumMarconi);
     $scope.currentAlbum = $scope.albums[$stateParams.id];
-    Metric.registerAlbumClicks($scope.currentAlbum);
     var hoveredSong = null;
     var playingSong = null;
 
@@ -377,7 +376,7 @@ blocJams.controller('Album.controller', ['$scope', 'SongPlayer', '$stateParams',
     };
 
     $scope.playSong = function(song) {
-        SongPlayer.setSong($scope.album, song);
+        SongPlayer.setSong($scope.currentAlbum, song);
     };
 
     $scope.pauseSong = function(song) {
@@ -415,19 +414,18 @@ blocJams.service('Metric', ['$rootScope', function($rootScope) {
             // Add time to event register.
             songObj['playedAt'] = new Date();
             $rootScope.songPlays.push(songObj);
-            console.log(songObj);
         },
         //Function that records a metric object of albums clicked and pushed it to the $rootScope array
         registerAlbumClicks: function(albumObj) {
             // Add time to event register.
-            albumObj['playedAt'] = new Date();
+            //albumObj['playedAt'] = new Date();
             $rootScope.albumClicks.push(albumObj);
-            console.log(albumObj);
+            console.log($rootScope.albumClicks);
         },
         //Function that records a metric object of artists clicked and pushed it to the $rootScope array
         registerArtistsClicks: function(artistObj) {
             // Add time to event register.
-            artistObj['playedAt'] = new Date();
+            //artistObj['playedAt'] = new Date();
             $rootScope.artistClicks.push(artistObj);
             console.log(artistObj);
         },
@@ -449,7 +447,7 @@ blocJams.controller("dashboard.controller", ["$scope","Metric","$rootScope",func
     $scope.songPlays = $rootScope.songPlays;
     $scope.albumClicks = $rootScope.albumClicks;
     $scope.artistClicks = $rootScope.artistClicks;
-
+    console.log($scope.albumClicks);
     $scope.state = "song";
     $scope.buttonClick = function(button) {
         $scope.state = button
@@ -483,7 +481,10 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metri
         play: function() {
             this.playing = true;
             currentSoundFile.play();
-            Metric.listSongsPlayed(this.currentSong);
+            Metric.registerSongPlay(this.currentSong);
+            console.log(this.currentAlbum);
+            Metric.registerAlbumClicks(this.currentAlbum);
+            //Metric.registerArtistsClicks(this.)
         },
         pause: function() {
             this.playing = false;

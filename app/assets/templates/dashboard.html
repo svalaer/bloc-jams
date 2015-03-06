@@ -56,26 +56,32 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat ="song in songPlays track by $index">
-                        <td> {{ song.songName }} </td>
-                        <td> {{song.playedAt }} </td>
+                        <td> {{ song.name }} </td>
+                        <td> {{ song.playedAt }} </td>
                     </tr>
                     </tbody>
                 </table>
-                <table ng-show ="state=='albumClicks'" class="table table-striped">
+                <table ng-show ="state=='album'" class="table table-striped">
                     <thead>
                     <tr>
                         <th>Album</th>
                         <th>Played At</th>
+                        <th>Label</th>
+                        <th>Artist</th>
+                        <th>Year</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr ng-repeat ="album in albumClicks track by $index">
-                        <td> {{ album.albumName }} </td>
+                        <td> {{ album.album }} </td>
                         <td> {{ album.playedAt }} </td>
+                        <td> {{ album.label }} </td>
+                        <td> {{ album.artist }} </td>
+                        <td> {{ album.year }} </td>
                     </tr>
                     </tbody>
                 </table>
-                <table ng-show ="state=='artistClicks'" class="table table-striped">
+                <table ng-show ="state=='artist'" class="table table-striped">
                     <thead>
                     <tr>
                         <th>Artist</th>
@@ -84,7 +90,7 @@
                     </thead>
                     <tbody>
                     <tr ng-repeat="artist in artistClicks track by $index">
-                        <td> {{ artist.artistName }} </td>
+                        <td> {{ artist.artist }} </td>
                         <td> {{ artist.playedAt }} </td>
                     </tr>
                     </tbody>
