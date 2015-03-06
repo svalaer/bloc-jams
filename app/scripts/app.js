@@ -226,7 +226,7 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metri
         play: function() {
             this.playing = true;
             currentSoundFile.play();
-            Metric.registerSongPlay(this.currentSong);
+            Metric.listSongsPlayed(this.currentSong);
         },
         pause: function() {
             this.playing = false;
