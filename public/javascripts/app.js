@@ -422,12 +422,14 @@ blocJams.service('Metric', ['$rootScope', function($rootScope) {
             // Add time to event register.
             albumObj['playedAt'] = new Date();
             $rootScope.albumClicks.push(albumObj);
+            console.log(albumObj);
         },
         //Function that records a metric object of artists clicked and pushed it to the $rootScope array
         registerArtistsClicks: function(artistObj) {
             // Add time to event register.
             artistObj['playedAt'] = new Date();
             $rootScope.artistClicks.push(artistObj);
+            console.log(artistObj);
         },
         listSongsPlayed: function() {
             var songs = [];

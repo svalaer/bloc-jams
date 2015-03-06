@@ -69,7 +69,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat ="song in songPlays">
+                    <tr ng-repeat ="album in albumClicks track by $index">
                         <td> {{ album.albumName }} </td>
                         <td> {{ album.playedAt }} </td>
                     </tr>
@@ -83,7 +83,7 @@
                     </tr>
                     </thead>
                     <tbody>
-                    <tr ng-repeat="song in songPlays">
+                    <tr ng-repeat="artist in artistClicks track by $index">
                         <td> {{ artist.artistName }} </td>
                         <td> {{ artist.playedAt }} </td>
                     </tr>
