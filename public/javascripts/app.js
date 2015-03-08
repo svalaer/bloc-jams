@@ -319,6 +319,11 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         templateUrl: '/templates/dashboard.html',
         controller: 'dashboard.controller'
     });
+    $stateProvider.state('profile', {
+        url: '/profile',
+        templateUrl: '/templates/profile.html',
+        controller: 'profile.controller'
+    });
 }]);
 
 
@@ -658,6 +663,10 @@ blocJams.filter('timecode', function(){
 
         return output;
     }
+});
+
+blocJams.module('ui.bootstrap.demo').controller('CollapseDemoCtrl', function ($scope) {
+    $scope.isCollapsed = false;
 });
 
 

@@ -62,6 +62,11 @@ blocJams.config(['$stateProvider', '$locationProvider', function($stateProvider,
         templateUrl: '/templates/dashboard.html',
         controller: 'dashboard.controller'
     });
+    $stateProvider.state('profile', {
+        url: '/profile',
+        templateUrl: '/templates/profile.html',
+        controller: 'profile.controller'
+    });
 }]);
 
 
