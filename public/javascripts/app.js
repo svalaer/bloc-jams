@@ -452,7 +452,6 @@ blocJams.controller("dashboard.controller", ["$scope","Metric","$rootScope",func
     $scope.songPlays = $rootScope.songPlays;
     $scope.albumClicks = $rootScope.albumClicks;
     $scope.artistClicks = $rootScope.artistClicks;
-    console.log($scope.albumClicks);
     $scope.state = "song";
     $scope.buttonClick = function(button) {
         $scope.state = button
