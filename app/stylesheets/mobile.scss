@@ -1,5 +1,7 @@
 @media screen and (max-width: 768px) {
 
+  .nav, .pagination, .carousel, .panel-title a { cursor: pointer; }
+
   /* Landing Page and Global Styles */
   .player-header-nav.navbar {
     .navbar-nav {
@@ -45,6 +47,6 @@
   
   /* Player Bar*/
   
-
+  
 
 }

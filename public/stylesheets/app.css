@@ -432,6 +432,8 @@ a:link {
   /* Landing Page and Global Styles */
   /* Collection View */
   /* Player Bar*/
+  .nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer; }
   .player-header-nav.navbar .navbar-nav li {
     text-align: center; }
   .player-header-nav.navbar .hero-content h1, .player-header-nav.navbar .hero-content h3 {
@@ -762,6 +764,8 @@ td.song-number {
   /* Landing Page and Global Styles */
   /* Collection View */
   /* Player Bar*/
+  .nav, .pagination, .carousel, .panel-title a {
+    cursor: pointer; }
   .player-header-nav.navbar .navbar-nav li {
     text-align: center; }
   .player-header-nav.navbar .hero-content h1, .player-header-nav.navbar .hero-content h3 {
