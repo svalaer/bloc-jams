@@ -664,9 +664,9 @@ blocJams.filter('timecode', function(){
     }
 });
 
-blocJams.module('ui.bootstrap.demo').controller('CollapseDemoCtrl', function ($scope) {
-    $scope.isCollapsed = false;
-});
+//blocJams.module('ui.bootstrap.demo').controller('CollapseDemoCtrl', function ($scope) {
+//    $scope.isCollapsed = false;
+//});
 
 
 });

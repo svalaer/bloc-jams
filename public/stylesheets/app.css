@@ -763,6 +763,7 @@ td.song-number {
 @media screen and (max-width: 768px) {
   /* Landing Page and Global Styles */
   /* Collection View */
+  /* Icon bar*/
   /* Player Bar*/
   .nav, .pagination, .carousel, .panel-title a {
     cursor: pointer; }
@@ -789,7 +790,9 @@ td.song-number {
     margin-left: auto;
     margin-right: auto;
     width: 280px;
-    /* Width of the album image. */ } }
+    /* Width of the album image. */ }
+  .icon-bar {
+    background-color: white; } }
 
 
 /*# sourceMappingURL=app.css.map*/
