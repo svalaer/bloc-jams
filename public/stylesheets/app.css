@@ -138,10 +138,8 @@ td.song-number {
     padding: 0;
     min-height: 100%; }
   .player-bar .left-controls {
-    width: 25%;
     text-align: left; }
   .player-bar .right-controls {
-    width: 25%;
     text-align: right; }
   .player-bar .play-controls a {
     font-size: 20px;
@@ -431,6 +429,7 @@ a:link {
 @media screen and (max-width: 768px) {
   /* Landing Page and Global Styles */
   /* Collection View */
+  /* Icon bar*/
   /* Player Bar*/
   .nav, .pagination, .carousel, .panel-title a {
     cursor: pointer; }
@@ -457,7 +456,9 @@ a:link {
     margin-left: auto;
     margin-right: auto;
     width: 280px;
-    /* Width of the album image. */ } }
+    /* Width of the album image. */ }
+  .icon-bar {
+    background-color: white; } }
 
 html {
   height: 100%; }
@@ -657,11 +658,9 @@ td.song-number {
   vertical-align: middle; }
 
 .player-bar .left-controls {
-  width: 25%;
   text-align: left; }
 
 .player-bar .right-controls {
-  width: 25%;
   text-align: right; }
 
 .player-bar .play-controls a {
