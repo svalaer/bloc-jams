@@ -128,7 +128,8 @@ td.song-number {
   right: 0;
   height: 150px;
   background: rgba(255, 255, 255, 0.3);
-  z-index: 100; }
+  z-index: 100;
+  padding-top: 50px; }
   .player-bar a, .player-bar a:hover {
     color: white;
     cursor: pointer;
@@ -150,7 +151,7 @@ td.song-number {
     margin-right: 60px;
     font-size: 30px; }
   .player-bar .currently-playing {
-    width: 50%;
+    /*width: 50%;*/
     text-align: center;
     position: relative; }
     .player-bar .currently-playing .song-name, .player-bar .currently-playing .artist-name {
@@ -675,7 +676,7 @@ td.song-number {
   font-size: 30px; }
 
 .player-bar .currently-playing {
-  width: 50%;
+  /*width: 50%;*/
   text-align: center;
   position: relative; }
 
