@@ -488,7 +488,7 @@ blocJams.service('SongPlayer', ['$rootScope',"Metric", function($rootScope,Metri
             Metric.registerSongPlay(this.currentSong);
             console.log(this.currentAlbum);
             Metric.registerAlbumClicks(this.currentAlbum);
-            Metric.registerArtistsClicksClicks(this.currentAlbum);
+            Metric.registerArtistsClicks(this.currentAlbum);
             //Metric.registerArtistsClicks(this.)
         },
         pause: function() {
