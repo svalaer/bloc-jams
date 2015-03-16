@@ -1,4 +1,3 @@
-
 @charset "UTF-8";
 
 /*!
@@ -4149,6 +4148,31 @@ td.song-number {
   display: inline-block;
   width: 100px;
   vertical-align: middle; }
+
+.landing-album-list:hover .thumb .animate-enter, .landing-album-list:hover .thumb .animate-leave {
+  -webkit-transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -moz-transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -ms-transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  -o-transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  transition: 1000ms cubic-bezier(0.25, 0.25, 0.75, 0.75) all;
+  position: relative;
+  display: block; }
+.landing-album-list:hover .thumb .animate-leave.animate-leave-active, .landing-album-list:hover .thumb .animate-enter {
+  -webkit-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -o-transform: rotateY(90deg);
+  transform: rotateY(90deg);
+  opacity: 0;
+  height: 0px; }
+.landing-album-list:hover .thumb .animate-enter.animate-enter-active, .landing-album-list:hover .thumb .animate-leave {
+  -webkit-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -o-transform: rotateY(0deg);
+  transform: rotateY(0deg);
+  opacity: 1;
+  height: 30px; }
 
 @media screen and (max-width: 768px) {
   /* Landing Page and Global Styles */
