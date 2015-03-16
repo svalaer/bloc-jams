@@ -2,19 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fa2946aa-7501-4e55-81b3-331f2594ba15" name="Default" comment="Added a profile and subscription page with jquery tabs">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/stylesheets/_animate.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/app.css.map" afterPath="$PROJECT_DIR$/public/stylesheets/app.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/stylesheets/app.css" afterPath="$PROJECT_DIR$/public/stylesheets/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app.js.map" afterPath="$PROJECT_DIR$/public/javascripts/app.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/scripts/app.js" afterPath="$PROJECT_DIR$/app/scripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/javascripts/app.js" afterPath="$PROJECT_DIR$/public/javascripts/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/stylesheets/app.scss" afterPath="$PROJECT_DIR$/app/stylesheets/app.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/templates/dashboard.html" afterPath="$PROJECT_DIR$/app/assets/templates/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/dashboard.html" afterPath="$PROJECT_DIR$/public/templates/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/templates/landing.html" afterPath="$PROJECT_DIR$/app/assets/templates/landing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/templates/landing.html" afterPath="$PROJECT_DIR$/public/templates/landing.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bloc-jams.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -63,7 +51,7 @@
         <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.6446281" vertical-offset="3027" max-vertical-offset="6255">
-              <caret line="233" column="64" selection-start-line="233" selection-start-column="64" selection-end-line="233" selection-end-column="64" />
+              <caret line="233" column="40" selection-start-line="233" selection-start-column="40" selection-end-line="233" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -697,7 +685,7 @@
       <workItem from="1426007831905" duration="115000" />
       <workItem from="1426124936026" duration="1513000" />
       <workItem from="1426212894139" duration="185000" />
-      <workItem from="1426295154395" duration="15476000" />
+      <workItem from="1426295154395" duration="15493000" />
     </task>
     <task id="LOCAL-00001" summary="Added title to page">
       <created>1421466027101</created>
@@ -835,7 +823,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="44578000" />
+    <option name="totallyTimeSpent" value="44595000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -1314,7 +1302,7 @@
     <entry file="file://$PROJECT_DIR$/app/scripts/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6446281" vertical-offset="3027" max-vertical-offset="6255">
-          <caret line="233" column="64" selection-start-line="233" selection-start-column="64" selection-end-line="233" selection-end-column="64" />
+          <caret line="233" column="40" selection-start-line="233" selection-start-column="40" selection-end-line="233" selection-end-column="40" />
           <folding />
         </state>
       </provider>
