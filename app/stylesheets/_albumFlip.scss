@@ -4,7 +4,7 @@
 }
 /* flip the pane when hovered */
 .flip-container:hover .flipper, .flip-container.hover .flipper {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
 
 .flip-container, .front, .back {
@@ -33,10 +33,10 @@
 .front {
   z-index: 2;
   /* for firefox 31 */
-  transform: rotateY(0deg);
+  transform: rotateX(0deg);
 }
 
 /* back, initially hidden pane */
 .back {
-  transform: rotateY(180deg);
+  transform: rotateX(180deg);
 }
