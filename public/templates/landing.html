@@ -26,17 +26,26 @@
     <div class="row">
         <div class="col-md-4 thumb" ng-repeat="albumURL in albumURLs">
             <img  ng-src="{{albumURL}}">
+            <script>
+                $( document ).ready(function() {
+                    $("p").mouseover(function(){
+                        $('<img  ng-src="{{albumURL}}">').addClass('animated flipInY');
+                        console.log("test");
+                    });
+                });
+            </script>
         </div>
     </div>
 </div>
 
-<div class="flip-container" ontouchstart="this.classList.toggle('hover');">
-    <div class="flipper">
-        <div class="front">
-            <!-- front content -->
-        </div>
-        <div class="back">
-            <!-- back content -->
-        </div>
-    </div>
-</div>
+
+<!--<div class="flip-container" ontouchstart="this.classList.toggle('hover');">-->
+    <!--<div class="flipper">-->
+        <!--<div class="front">-->
+            <!--&lt;!&ndash; front content &ndash;&gt;-->
+        <!--</div>-->
+        <!--<div class="back">-->
+            <!--&lt;!&ndash; back content &ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->

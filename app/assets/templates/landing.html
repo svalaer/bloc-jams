@@ -26,6 +26,14 @@
     <div class="row">
         <div class="col-md-4 thumb" ng-repeat="albumURL in albumURLs">
             <img  ng-src="{{albumURL}}">
+            <script>
+                $( document ).ready(function() {
+                    $("p").mouseover(function(){
+                        $('<img  ng-src="{{albumURL}}">').addClass('animated flipInY');
+                        console.log("test");
+                    });
+                });
+            </script>
         </div>
     </div>
 </div>
