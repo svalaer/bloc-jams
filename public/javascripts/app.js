@@ -344,6 +344,13 @@ blocJams.controller('Landing.controller', ['$scope', function($scope) {
         '/images/album-placeholders/album-8.jpg',
         '/images/album-placeholders/album-9.jpg',
     ];
+    $scope.hoverIn = function(){
+        this.hoverEdit = true;
+    };
+
+    $scope.hoverOut = function(){
+        this.hoverEdit = false;
+    };
 }]);
 
 //controller for for collection

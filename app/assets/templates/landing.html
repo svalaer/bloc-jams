@@ -24,20 +24,27 @@
 
 <div class="landing-album-list container">
     <div class="row">
-        <div class="col-md-4 thumb" ng-repeat="albumURL in albumURLs">
-            <img  ng-src="{{albumURL}}">
-            <script>
-                $( document ).ready(function() {
-                    $("p").mouseover(function(){
-                        $('<img  ng-src="{{albumURL}}">').addClass('animated flipInY');
-                        console.log("test");
-                    });
-                });
-            </script>
+        <div class="col-md-4 thumb" ng-repeat="albumURL in albumURLs"
+             ng-mouseleave="albumFlip = ''">
+            <img class="albumImage animated" ng-class="albumFlip"
+                 ng-src="{{albumURL}}"
+                 ng-mouseenter="albumFlip = 'flipInY'">
         </div>
     </div>
 </div>
 
+<!--<script>-->
+    <!--$( document ).ready(function() {-->
+        <!--$('.albumImage').mouseenter(function(){-->
+            <!--$(this).addClass('animated flipInY');-->
+            <!--console.log('test1');-->
+        <!--});-->
+        <!--$('.albumImage').mouseout(function(){-->
+            <!--$(this).addClass('animated flipInY');-->
+            <!--console.log('test2');-->
+        <!--});-->
+    <!--});-->
+<!--</script>-->
 
 <!--<div class="flip-container" ontouchstart="this.classList.toggle('hover');">-->
     <!--<div class="flipper">-->
